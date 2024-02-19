@@ -1,11 +1,16 @@
-const {app, BrowserWindow} = require('electron');
-const Mousetrap = require('mousetrap');
+const { app, BrowserWindow } = require('electron');
 
 
-function createWindow(){
+function createWindow() {
     const ventana = new BrowserWindow({
         width: 300,
-        height: 450
+        height: 450,
+        webPreferences: {
+
+            nodeIntegration: true,
+            contextIsolation: false
+
+        }
     });
     ventana.loadFile('index.html')
 }

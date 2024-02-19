@@ -15,15 +15,16 @@ var btnDel = document.getElementById('btnDelete')
 var btn_10 = document.getElementById('btn_10')
 var btn_15 = document.getElementById('btn_15')
 var btn_20 = document.getElementById('btn_20')
-
 //div
 var inptNum = document.getElementById('div_inpt')
 var resultado = document.getElementById('div-resultado')
 
 // Crear funcion para el clic del boton el cual recibirá como parámetro el boton
 function clickBtn(btn) {
-    if (inptNum.textContent == '0') {
+    if (inptNum.textContent == '0' || resultadoVisible) {
         inptNum.innerHTML = btn.textContent
+        resultado.innerHTML = '';
+        resultadoVisible = false;
     } else {
         inptNum.innerHTML += btn.textContent
     }
@@ -40,7 +41,8 @@ function bkSpace(div) {
     }
  }
 
-// Creaer funcion para el resultado de los porcentajes
+// Crear funcion para el resultado de los porcentajes
+var resultadoVisible = false;
 function f_resultado(btn_porcentaje) {
     let porcentaje = parseInt(btn_porcentaje.textContent.substring(0, btn_porcentaje.textContent.length - 2)) / 100;
     if (inptNum.innerHTML != '0') {
@@ -48,6 +50,7 @@ function f_resultado(btn_porcentaje) {
         total = total + (total * porcentaje);
 
         resultado.innerHTML = total;
+        resultadoVisible = true;
     } else {
         resultado.innerHTML = '0';
     }
@@ -72,11 +75,19 @@ btn_15.addEventListener('click', (event) => f_resultado(btn_15))
 btn_20.addEventListener('click', (event) => f_resultado(btn_20))
 
 
-/* PENDIENTE YA QUE MUESTRA ERROR */
+// Eventos con el teclado
 
-// // var Mousetrap = require('mousetrap');
-// const {Mousetrap} = require('mousetrap')
-// Mousetrap.bind('1',clickUno())
+// Traer librería de mousetrap
+const Mousetrap = require('mousetrap')
 
-// function clickUno(){
-//     alert('funciona');
+Mousetrap.bind('1', (event) => clickBtn(btnUno))
+Mousetrap.bind('2', (event) => clickBtn(btnDos))
+Mousetrap.bind('3', (event) => clickBtn(btnTres))
+Mousetrap.bind('4', (event) => clickBtn(btnCuatro))
+Mousetrap.bind('5', (event) => clickBtn(btnCinco))
+Mousetrap.bind('6', (event) => clickBtn(btnSeis))
+Mousetrap.bind('7', (event) => clickBtn(btnSiete))
+Mousetrap.bind('8', (event) => clickBtn(btnOcho))
+Mousetrap.bind('9', (event) => clickBtn(btonNueve))
+Mousetrap.bind('0', (event) => clickBtn(btnCero))
+Mousetrap.bind('backspace', (event) => bkSpace(inptNum))
