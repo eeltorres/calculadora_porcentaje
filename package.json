@@ -1,0 +1,17 @@
+{
+  "name": "calculadora_propinas",
+  "version": "1.0.0",
+  "description": "Esta es una calculadora de propinas",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.3"
+  },
+  "dependencies": {
+    "mousetrap": "^1.6.5"
+  }
+}

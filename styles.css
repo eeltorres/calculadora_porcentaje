@@ -1,0 +1,68 @@
+body{
+    background-color: #646465;
+}
+
+.div-container{
+    text-align: right;
+    border: 3px solid;
+    border-radius: 5px;
+    margin:2px;
+    padding: 3px;
+    height: 75px;
+    font-weight: bolder;
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #f2f3fa;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    border: 2px solid;
+    padding: 3px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+
+
+.botonNum{
+    font-size: x-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #b1b2ba;
+    height: 50px;
+    font-weight: bold;
+}
+
+.botonOp{
+    background-color: red;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.botonPorcentaje{
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 60px;
+    padding: 10px;
+    border: 3px solid;
+    border-radius: 2px;
+}
+
+.div_porcentaje{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#btn_10{
+    background-color: #ffff85;
+}
+
+#btn_15{
+    background-color: #edd154;
+}
+
+#btn_20{
+    background-color: #b3f166;
+}
